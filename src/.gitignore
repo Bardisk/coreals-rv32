@@ -1,0 +1,9 @@
+*
+!.gitignore
+!*.s
+!*.sv
+!als
+!code
+!Makefile
+!*.py
+!*.cpp
