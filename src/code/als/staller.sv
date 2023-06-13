@@ -9,7 +9,7 @@ module staller(
 );
 
   assign id_ex_stalled = pcg_branch;
-  assign if_id_stalled = pcg_isjalr | pcg_branch;
+  assign if_id_stalled = pcg_branch;
 
 endmodule
 

@@ -26,7 +26,7 @@ module pc_reg(
   wire `WIDE(`XLEN) pc_base, pc_addition;
 
   assign pc_base = pcg_isjalr ? pcg_jalr_reg : pc;
-  assign pc_addition = pcg_branch ? pcg_offset : 32'h4;
+  assign pc_addition = pcg_branch ? pcg_offset - 32'hC : 32'h4;
 
   assign pc_out = pc_base + pc_addition;
 

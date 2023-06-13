@@ -9,7 +9,6 @@ module id (
   if_id_ex.out if_id_ex_id,
   output wire `WIDE(`XLEN) PC_out_ID,
   output wire `WIDE(`XLEN) inst_ID,
-  output wire pcg_isjalr,
   output wire `WIDE(5) reg_anum_id,
   output wire `WIDE(5) reg_bnum_id
 );
@@ -24,7 +23,6 @@ module id (
 
   assign PC_out_ID = if_if_id_id.pc;
   assign inst_ID = if_if_id_id.inst;
-  assign pcg_isjalr = (branch == `BRANCH_JALR);
 
   assign reg_anum_id = reg_anum;
   assign reg_bnum_id = reg_bnum;

@@ -169,13 +169,15 @@ module load_sext (
   output  reg     `WIDE(`XLEN)  target
 );
 
-  always @(*) begin
+  // assign target = current;
+
+  always_comb begin : block
     case (low_addr)
       2'b00: target = current;
       2'b01: target = current >> (`XLEN/4);
       2'b10: target = current >> (`XLEN/2);
       2'b11: target = current >> ((`XLEN/2) + (`XLEN/4));
-      default: ;
+      default: target = current;
     endcase
     if (mem_signed) begin
       case (mem_mode)

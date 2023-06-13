@@ -12,7 +12,7 @@ module wb(
   output wire reg_wen
 );
 
-  assign Data_out_WB = if_m_wb_wb.Data_out;
+  assign Data_out_WB = rwdata;
   assign reg_wen = if_m_wb_wb.reg_wr;
   assign reg_wnum = if_m_wb_wb.reg_wnum;
 

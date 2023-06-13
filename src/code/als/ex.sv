@@ -25,6 +25,7 @@ module ex (
   output wire `WIDE(`XLEN) pcg_offset,
   output wire MemRW_EX,
   output reg  pcg_branch,
+  output wire pcg_isjalr,
   output wire reg_wr_ex,
   output wire mem_load_ex,
   output wire `WIDE(`XLEN) aluresult_ex
@@ -73,6 +74,8 @@ module ex (
       default:      datab = '0;
     endcase
   end
+
+  assign pcg_isjalr = (if_id_ex_ex.branch == `BRANCH_JALR);
 
   always @(*) begin
     case (if_id_ex_ex.branch)
